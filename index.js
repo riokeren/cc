@@ -36,9 +36,10 @@ app.post("/", async (req, res) => {
     namaIlmiah: req.body.namaIliah,
     lokasi: req.body.lokasi, 
     tingkatRacun: req.body.tingkatRacun,
-    efek: req.body.efek
+    efek: req.body.efek,
+    pertolongan: req.body.pertolongan
   }
-  const query ="INSERT INTO plants VALUES (?, ?, ?, ?, ?)";
+  const query ="INSERT INTO plants VALUES (?, ?, ?, ?, ?, ?)";
   pool.query(query, Object.values(data), (error) => {
     if (error){
       res.json({ status: "failure", reason: error.code });
